@@ -1,0 +1,25 @@
+{
+  "name": "exams",
+  "version": "1.0.0",
+  "description": "The repo for my exam study.",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Liteolika/Exams.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Liteolika/Exams/issues"
+  },
+  "homepage": "https://github.com/Liteolika/Exams#readme",
+  "devDependencies": {
+    "lodash": "^4.17.5",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.12"
+  }
+}
