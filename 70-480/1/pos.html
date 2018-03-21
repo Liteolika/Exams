@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: #888881;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+
+            var top = document.getElementById("top");
+            var left = document.getElementById("left");
+            var pos = document.getElementById("pos");
+
+            document.getElementById("btnUpdatePosition").onclick = function () {
+                var img = document.getElementById("w2");
+                img.style.position = pos.value;
+                img.style.left = left.value + "px";
+                img.style.top = top.value + "px";
+            }
+
+
+        };
+
+    </script>
+</head>
+
+<body>
+    <table style="width: 100%; height: 100%; border: solid 1px black;">
+        <tr>
+            <td style="width: 80%; vertical-align: top;">
+                <div style="position: relative;">
+                    <!-- parent div must have relative position -->
+                    <img src="images/wikipedia.png" id="w1" />
+                    <img src="images/wikipedia.png" id="w2" />
+                </div>
+            </td>
+            <td style="width: 20%; vertical-align: top;">
+                <span>Left:</span>
+                <input type="number" id="left">
+                <br>
+                <span>Top:</span>
+                <input type="number" id="top">
+                <br>
+                <span>Position:</span>
+                <select id="pos">
+                    <option value="absolute">Absolute</option>
+                    <option value="relative">Relative</option>
+                    <option value="fixed">Fixed</option>
+                </select>
+                <button id="btnUpdatePosition">Update</button>
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
