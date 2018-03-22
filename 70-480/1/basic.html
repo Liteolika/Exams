@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <style>
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: #888881;
+        }
+
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+
+        var video;
+
+        window.onload = function () {
+
+            video = document.getElementById("videoplayer");
+
+            document.getElementById("progressinput").onkeyup = function (evt) {
+                var newVal = evt.target.value;
+                var progressbar = document.getElementById("progressbar");
+                progressbar.setAttribute("value", newVal);
+            }
+
+
+        };
+
+        function doStuff() {
+            var profile = document.getElementById("profile");
+            var newLine = document.createElement("p");
+            newLine.innerText = "Hej Peter";
+        }
+
+        function play() {
+            video.play();
+        }
+
+        function pause() {
+            video.pause();
+        }
+
+        function back() {
+            video.currentTime -= 10;
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a href="../index.html">Index</a>
+    </nav>
+    <div id="outerDiv">
+        <table class="tables" style="width: 100%">
+            <tr>
+                <td colspan="3">
+                    <header>
+                        <h1>Exam 70-480 - Chapter 1</h1>
+                    </header>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <nav>
+                        <a href="">Home</a>
+                        <br />
+                        <a href="">Page 1</a>
+                        <br />
+                        <a href="">Page 2</a>
+                        <br />
+                        <a href="">Page 3</a>
+                        <br />
+                        <button onclick="doStuff()">Do It</button>
+                    </nav>
+                </td>
+                <td>
+
+                    <article>
+                        <header>
+                            <hgroup>
+                                <h1>An article regarding something is presented here.</h1>
+                            </hgroup>
+                        </header>
+                        <section>
+                            <hgroup>
+                                <h2>Progress</h2>
+                            </hgroup>
+                            <progress id="progressbar" max="100" value="22"></progress>
+                            <input type="number" id="progressinput" value="10" />
+                        </section>
+                        <section>
+                            <hgroup>
+                                <h2>Images</h2>
+                            </hgroup>
+                            <figure>
+                                <img src="images/wikipedia.png" width="100">
+                                <figcaption>Fig 1: A logo</figcaption>
+                            </figure>
+                        </section>
+                        <section>
+                            <hgroup>
+                                <h2>Video</h2>
+                            </hgroup>
+                            <video id="videoplayer" poster="images/wikipedia.png" controls>
+                                <source src="videos/small.mp4" type="audio/mp4" />
+                                <source src="videos/small.ogv" type="video/ogg" />
+                                <object>Cannot display video..</object>
+                            </video>
+                            <button onclick="play()">Play</button>
+                            <button onclick="pause()">Pause</button>
+                            <button onclick="back()">Back</button>
+                        </section>
+                    </article>
+                </td>
+                <td>
+                    <section id="profile">
+                        <article>
+                            <hgroup>
+                                <h1>Some other article</h1>
+                            </hgroup>
+                        </article>
+                    </section>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <footer>(C) 2018</footer>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

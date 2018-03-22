@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <style>
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: #888881;
+        }
+
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+
+        };
+
+
+
+        function drawCanvas1() {
+            var c = document.getElementById("canvasSurface1");
+            var ctx = c.getContext("2d");
+
+            ctx.beginPath();
+            ctx.moveTo(10, 10);
+            ctx.lineTo(225, 350);
+            ctx.lineTo(250, 50);
+            ctx.lineWidth = 3;
+            ctx.strokeStyle = "#ff0000"
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(250, 50);
+            ctx.lineTo(350, 100);
+            ctx.lineWidth = 3;
+            ctx.strokeStyle = "#00ff00";
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(350, 200, 75, 0 * Math.PI, 100 * Math.PI);
+            ctx.lineWidth = 10;
+            ctx.strokeStyle = "#0000ff";
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(500, 100);
+            ctx.quadraticCurveTo(300, 10, 580, 380);
+            ctx.lineWidth = 7;
+            ctx.strokeStyle = "#77aa44";
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(10, 10);
+            ctx.bezierCurveTo(0,200,300,300,50,400);
+            ctx.lineWidth = 12;
+            ctx.strokeStyle = "#000000";
+            ctx.stroke();
+
+
+        }
+
+function drawCanvas2() {
+            var c = document.getElementById("canvasSurface2");
+            var ctx = c.getContext("2d");
+
+            
+            ctx.lineWidth = 3;
+            ctx.rect(0, 0, c.width, c.height);
+            var gradient = ctx.createRadialGradient(0, 0, 199, c.width, c.height, 100);
+            gradient.addColorStop(0, "red");
+            gradient.addColorStop(.8, "orange");
+            gradient.addColorStop(1, "white");
+            ctx.fillStyle = gradient;
+            ctx.fill();
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(300, 200, 75, 1.75 * Math.PI, 1.25 * Math.PI, false);
+            ctx.lineTo(150, 125);
+            ctx.quadraticCurveTo(300, 0, 450, 125);
+            ctx.lineTo(353, 144);
+            ctx.lineCap = "round";
+            ctx.strokeStyle = "blue";
+            ctx.lineWidth = 10;
+            ctx.stroke();
+
+            ctx.beginPath();
+            var x, y;
+            x = 150;
+            y = 75;
+            ctx.strokeStyle = "red";
+            ctx.lineWidth = 5;
+            ctx.fillStyle = "green";
+            ctx.rect(300 - (x / 2), 350 - (y / 2), x, y);
+            ctx.stroke();
+            ctx.fill();
+
+            ctx.font = "24px Arial";
+            ctx.textAlign = "center";
+            ctx.fillStyle = "black";
+            ctx.fillText("This is my text", 100, 50);
+
+        }
+
+
+        function makeSvgRed(evt) {
+            var circle = evt.target;
+            circle.setAttribute("style", "fill: red");
+        }
+
+        function makeSvgBlue(evt) {
+            var circle = evt.target;
+            circle.setAttribute("style", "fill: blue");
+        }
+
+
+
+    </script>
+</head>
+
+<body>
+    
+    <nav><a href="../index.html">Index</a></nav>
+
+    <article>
+        <header>
+            <hgroup>
+                <h1>Canvas</h1>
+            </hgroup>
+        </header>
+        <section>
+            <canvas id="canvasSurface1" width="600" height="400">
+                Your browser does not support canvas.
+            </canvas>
+            <button onclick="drawCanvas1()">Draw on canvas</button>
+        </section>
+
+        <section>
+                <canvas id="canvasSurface2" width="600" height="400">
+                    Your browser does not support canvas.
+                </canvas>
+                <button onclick="drawCanvas2()">Draw on canvas</button>
+            </section>
+    </article>
+
+    <article>
+        <hgroup>
+            <h1>SVG</h1>
+        </hgroup>
+        <section>
+            <svg>
+                <circle id="circle" cx="50" cy="50" r="50" fill="green" onmouseover="makeSvgRed(evt)" onmouseout="makeSvgBlue(evt)"></circle>
+            </svg>
+        </section>
+    </article>
+
+</body>
+
+</html>

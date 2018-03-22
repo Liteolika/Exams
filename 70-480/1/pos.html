@@ -25,6 +25,12 @@
                 img.style.top = top.value + "px";
             }
 
+            pos.onchange = function() {
+                var img = document.getElementById("w2");
+                img.style.position = pos.value;
+                img.style.left = left.value + "px";
+                img.style.top = top.value + "px";
+            }
 
         };
 
@@ -59,9 +65,6 @@
         </tr>
     </table>
 
-
-
-    
 </body>
 
 </html>
