@@ -37,8 +37,9 @@
                 localStorage.clear();
             }
 
-            function removeItem(e) {
-                console.log("remove", e);
+            function removeItem(key) {
+                localStorage.removeItem(key);
+                loadStorage();
             }
 
             function loadStorage() {
@@ -54,6 +55,10 @@
                 tbl.setAttribute("style", "width: 100%; border: 1px solid black;")
 
                 for (var i = 0; i < localStorage.length; i++) {
+
+                    var key = localStorage.key(i);
+                    var val = localStorage.getItem(key);
+
                     var row = document.createElement("tr");
                     var keyCol = document.createElement("td");
                     var valCol = document.createElement("td");
@@ -61,11 +66,12 @@
 
                     var rmButton = document.createElement("button");
                     rmButton.innerText = "Remove";
-                    rmButton.onclick = removeItem;
+                    rmButton.dataset.storageKey = key;
+                    rmButton.onclick = function() { removeItem(this.dataset.storageKey); }
                     cmdCol.appendChild(rmButton);
 
-                    keyCol.innerText = localStorage.key(i);
-                    valCol.innerText = localStorage.getItem(keyCol.innerText);
+                    keyCol.innerText = key;
+                    valCol.innerText = val;
                     row.appendChild(keyCol);
                     row.appendChild(valCol);
                     row.appendChild(cmdCol);
@@ -76,6 +82,8 @@
             }
 
         };
+
+        
 
     </script>
 </head>
