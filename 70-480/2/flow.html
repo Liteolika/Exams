@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html manifest="webApp.appcache">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: #cccccc;
+        }
+    </style>
+    <script>
+        
+        function Game() {}
+
+        Game.prototype = {
+
+            boardSize: -1,
+            board: [],
+            createBoard: function () {
+                var size = document.getElementById("fieldCount").value;
+                this.boardSize = size;
+                this.board = new Array();
+               
+                console.log(this.board);
+            },
+            printBoard: function () {
+                
+            },
+            next: function() {
+                
+            }
+        }
+
+        window.onload = function () {
+
+            var game = new Game();
+            document.getElementById("btnCreate").onclick = game.createBoard;
+
+        };
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a href="../index.html">Index</a>
+    </nav>
+
+    <article>
+        <hgroup>
+            <h1>Program Flow</h1>
+        </hgroup>
+        <section>
+            Game setup
+            <br>
+            <input type="number" id="fieldCount"> Enter number of fields in a row
+            <button id="btnCreate">Create</button>
+        </section>
+        <section id="board">
+
+        </section>
+    </article>
+
+</body>
+
+</html>

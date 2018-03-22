@@ -1,0 +1,10 @@
+CACHE MANIFEST
+
+CACHE
+apis.html
+
+NETWORK:
+basic.html
+
+FALLBACK:
+basic.html  pos.html

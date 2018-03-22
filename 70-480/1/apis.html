@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html manifest="webApp.appcache">
 
 <head>
     <meta charset="utf-8" />
@@ -13,12 +13,7 @@
         }
     </style>
     <script>
-
-
-
         window.onload = function () {
-
-
 
             document.getElementById("btnAdd").onclick = function () {
                 var storageKey = document.getElementById("storageKey").value;
@@ -67,7 +62,9 @@
                     var rmButton = document.createElement("button");
                     rmButton.innerText = "Remove";
                     rmButton.dataset.storageKey = key;
-                    rmButton.onclick = function() { removeItem(this.dataset.storageKey); }
+                    rmButton.onclick = function () {
+                        removeItem(this.dataset.storageKey);
+                    }
                     cmdCol.appendChild(rmButton);
 
                     keyCol.innerText = key;
@@ -81,10 +78,36 @@
                 storagecontent.appendChild(tbl);
             }
 
+            document.getElementById("btnGetGeo").onclick = function () {
+                var geolocator = window.navigator.geolocation;
+
+                var geoOptions = {
+                    enableHighAccuracy: true,
+                    timeout: 4000
+                };
+
+                geolocator.getCurrentPosition(
+                    geoCallback,
+                    geoCallbackError,
+                    geoOptions);
+
+                geolocator.watchPosition(
+                    geoCallback,
+                    geoCallbackError,
+                    geoOptions);
+
+
+            }
+
+            function geoCallback(thing) {
+                console.log(thing);
+            }
+
+            function geoCallbackError(thing) {
+                console.log("ERROR: ", thing);
+            }
+
         };
-
-        
-
     </script>
 </head>
 
@@ -105,6 +128,15 @@
             <button id="btnLoad">Load from storage</button>
             <button id="btnClear">Clear storage</button>
             <div id="storagecontent"></div>
+        </section>
+    </article>
+
+    <article>
+        <hgroup>
+            <h1>GeoLocation API</h1>
+        </hgroup>
+        <section>
+            <button id="btnGetGeo">Get GeoLocation</button>
         </section>
     </article>
 

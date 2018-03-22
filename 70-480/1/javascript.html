@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html manifest="webApp.appcache">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: #888881;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+
+        };
+
+        // var book = {
+        //     ISBN: "12345",
+        //     length: 199,
+        //     author: "Peter",
+        //     currentPage: 1,
+        //     flipTo(page) {
+        //         this.currentPage = page;
+        //         console.log(this.currentPage);
+        //     },
+        //     nextPage() {
+        //         this.currentPage++;
+        //         console.log(this.currentPage);
+        //     },
+        //     previousPage() {
+        //         this.currentPage--;
+        //         console.log(this.currentPage);
+        //     }
+        // }
+
+        function Book() {
+
+        }
+
+        function Book(title, length) {
+            this.title = title;
+            this.length = length;
+        }
+
+        Book.prototype = {
+            ISBN: "",
+            length: -1,
+            title: ""
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a href="../index.html">Index</a>
+    </nav>
+
+    <article>
+        <hgroup>
+            <h1>Javascript Objects</h1>
+        </hgroup>
+        <section>
+            
+        </section>
+    </article>
+
+</body>
+
+</html>
