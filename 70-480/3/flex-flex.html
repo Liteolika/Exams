@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .flexContainer {
+            border: solid 4px black;
+            display: flex;
+            /* width: 50%; */
+            /* flex-flow: row-reverse wrap-reverse; */
+            /* width: 22em;
+            height: 30em; */
+        }
+
+        .flexItem {
+            padding: 1em;
+            width: 1em;
+            text-align: center;
+            font-size: 1.2em;
+            opacity: 0.8;
+            color: white;
+            flex: 1 0 auto;
+        }
+
+        #flexItem1 {
+            background-color: rgb(221, 53, 53);
+        }
+
+        #flexItem2 {
+            background-color: rgb(74, 150, 74);
+        }
+
+        #flexItem3 {
+            background-color: rgb(202, 39, 181);
+        }
+
+        #flexItem4 {
+            background-color: rgb(92, 135, 206);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="../index.html">Index</a>
+    </nav>
+
+    <article>
+        <div class="flexContainer">
+            <div class="flexItem" id="flexItem1">Flex Item
+                <br>#1</div>
+            <div class="flexItem" id="flexItem2">Flex Item
+                <br>#2</div>
+            <div class="flexItem" id="flexItem3">Flex Item
+                <br>#3</div>
+            <div class="flexItem" id="flexItem4">Flex Item
+                <br>#4</div>
+        </div>
+    </article>
+
+</body>
+
+</html>

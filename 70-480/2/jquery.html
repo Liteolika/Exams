@@ -10,7 +10,9 @@
     <script>
         $("document").ready(() => {
             $("#btnQuery").click(() => {
-                var query = $("query").val();
+                var query = $("#query").val();
+
+                console.log("Searching for ", query);
 
                 $("#searchResults").empty();
 
@@ -19,10 +21,14 @@
                     cache: false,
                     dataType: "json",
                     success: function (data) {
-                        $(data.fruit).find(query).each(() => {
-                            $("#searchResults").append($this);
+                        var results = data.filter((item) => {
+                            if (item.fruits.indexOf(query) > -1)
+                                return true;
                         })
-
+                        results.forEach(element => {
+                            $("#searchResults").append(element.name + "<br/>");    
+                        });
+                        
                     }
                 })
             })
