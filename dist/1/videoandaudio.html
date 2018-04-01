@@ -1,0 +1,34 @@
+<!DOCTYPE html> <html> <head> <meta charset=utf-8 /> <title>Page Title</title> <style>article{border-top:solid 1px #000;margin-top:20px}</style> <script> import mov from "../media/small.mp4";
+        
+        var video;
+
+        window.onload = function () {
+
+            video = document.getElementById("videoplayer");
+
+            document.getElementById("progressinput").onkeyup = function (evt) {
+                var newVal = evt.target.value;
+                var progressbar = document.getElementById("progressbar");
+                progressbar.setAttribute("value", newVal);
+            }
+
+
+        };
+
+        function doStuff() {
+            var profile = document.getElementById("profile");
+            var newLine = document.createElement("p");
+            newLine.innerText = "Hej Peter";
+        }
+
+        function play() {
+            video.play();
+        }
+
+        function pause() {
+            video.pause();
+        }
+
+        function back() {
+            video.currentTime -= 10;
+        } </script> <link href="../main.css" rel="stylesheet"></head> <body> <header> <nav> <a href=../index.html>Back to main</a> </nav> </header> <main> <header> <h1>Video and audio</h1> </header> <article> <header> <h2>Video</h2> </header> <section> <video id=videoplayer poster=../images/any.jpg controls> <source src=../media/small.mp4 type=audio/mp4 /> <source src=../media/small.ogv type=video/ogg /> <object>Cannot display video..</object> </video> <button onclick=play()>Play</button> <button onclick=pause()>Pause</button> <button onclick=back()>Back</button> </section> </article> <article> <header> <h2>Audio</h2> </header> <section> </section> </article> </main> <script type="text/javascript" src="../main.js"></script></body> </html>

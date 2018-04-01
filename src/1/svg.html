@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <style>
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: #888881;
+        }
+
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+
+        };
+
+
+        function makeSvgRed(evt) {
+            var circle = evt.target;
+            circle.setAttribute("style", "fill: red");
+        }
+
+        function makeSvgBlue(evt) {
+            var circle = evt.target;
+            circle.setAttribute("style", "fill: blue");
+        }
+
+
+
+    </script>
+</head>
+
+<body>
+
+    <nav>
+        <a href="../index.html">Index</a>
+    </nav>
+
+    <article>
+        <hgroup>
+            <h1>SVG</h1>
+        </hgroup>
+        <section>
+            <svg>
+                <circle id="circle" cx="50" cy="50" r="50" fill="green" onmouseover="makeSvgRed(evt)" onmouseout="makeSvgBlue(evt)"></circle>
+            </svg>
+        </section>
+    </article>
+
+</body>
+
+</html>

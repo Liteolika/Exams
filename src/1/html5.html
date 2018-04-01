@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+
+</head>
+
+<body>
+
+    <!--    The <header> element represents a container for introductory content or a set of navigational links.
+            A <header> element typically contains:
+                - one or more heading elements (<h1> - <h6>)
+                - logo or icon
+                - authorship information
+            You can have several <header> elements in one document.
+            Note: A <header> tag cannot be placed within a <footer>, <address> or another <header> element. -->
+    <header>
+        <nav>
+            <a href="../index.html">Back to main</a>
+        </nav>
+    </header>
+
+
+    <!--    The <main> tag specifies the main content of a document.
+            The content inside the <main> element should be unique to the document. 
+            It should not contain any content that is repeated across documents such as sidebars, 
+            navigation links, copyright information, site logos, and search forms.
+            Note:   There must not be more than one <main> element in a document. 
+                    The <main> element must NOT be a descendant of an <article>, <aside>, <footer>, <header>, or <nav> element. -->
+    <main>
+        <header>
+            <h1>This is a header.</h1>
+        </header>
+
+        <!--    The <article> tag specifies independent, self-contained content.
+                An article should make sense on its own and it should be possible to distribute it independently from the rest of the site.
+                Potential sources for the <article> element:
+                    Forum post
+                    Blog post
+                    News story
+                    Comment -->
+        <article>
+            <h2>This is an article</h2>
+
+            <p>
+                <!-- The <mark> tag defines marked text.
+                     Use the <mark> tag if you want to highlight parts of your text. -->
+                <p>Do not forget to buy
+                    <mark>milk</mark> today.</p>
+            </p>
+
+            <!-- The <section> tag defines sections in a document, such as chapters, headers, footers, or any other sections of the document. -->
+            <section>
+                <h1>WWF</h1>
+                <p>The World Wide Fund for Nature (WWF) is....</p>
+            </section>
+
+            <figure>
+                <img src="../images/any.jpg" width="280" alt="A sunset at a lake." />
+                <figcaption>Fig1. - A sunset at a lake.</figcaption>
+            </figure>
+
+            <!--    The <details> tag specifies additional details that the user can view or hide on demand.
+                    The <details> tag can be used to create an interactive widget that the user can open and close. 
+                    Any sort of content can be put inside the <details> tag.
+                    The content of a <details> element should not be visible unless the open attribute is set. -->
+            <details>
+                <!-- The <summary> tag defines a visible heading for the <details> element. The heading can be clicked to view/hide the details. -->
+                <summary>Copyright 1999-2014.</summary>
+                <p> - by Benny Hill Data. All Rights Reserved.</p>
+                <p>All content and graphics on this web site are the property of the company Refsnes Data.</p>
+            </details>
+
+        </article>
+
+        <!--    The <aside> tag defines some content aside from the content it is placed in.
+                The aside content should be related to the surrounding content. -->
+        <aside>
+            Here is some related content.
+        </aside>
+
+    </main>
+
+    <!-- 
+            The <footer> tag defines a footer for a document or section.
+            A <footer> element should contain information about its containing element.
+            A <footer> element typically contains:
+                authorship information
+                copyright information
+                contact information
+                sitemap
+                back to top links
+                related documents
+            You can have several <footer> elements in one document. -->
+    <footer>
+        <p>Posted by: Benny Hill</p>
+        <p>Contact information:
+            <a href="mailto:benny@hill123.com">
+                someone@example.com</a>.</p>
+    </footer>
+
+</body>
+
+</html>
