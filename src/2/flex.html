@@ -32,10 +32,10 @@
             /* justify-content: flex-start; */
 
             /* Example 6 */
-            flex-direction: row;
+            /* flex-direction: row;
             justify-content: center;
             height: 500px;
-            align-items: center;
+            align-items: center; */
             
 
             /* This establishes the main-axis, thus defining the direction flex items are placed in the flex container. 
@@ -76,8 +76,8 @@
             /* Example 3 */
 
             /* Example 6 */
-            height: 100px;
-            width: 100px;
+            /* height: 100px;
+            width: 100px; */
 
             /* By default, flex items are laid out in the source order. 
             However, the order property controls the order in which they appear in the flex container. */
@@ -114,7 +114,43 @@
         .flexItem5 {
             background-color: #692260;
         }
+
+        .controlsHeader {
+            display: flex;
+            background-color: slategrey;
+            padding: 10px;
+        }
+
     </style>
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $("document").ready(() => {
+            $("#fc-direction").change((e) => {
+                $(".flexContainer").css("flex-direction", e.target.value);
+            })
+            $("#fc-wrap").change((e) => {
+                $(".flexContainer").css("flex-wrap", e.target.value);
+            })
+            $("#fc-w").change((e) => {
+                $(".flexContainer").css("width", e.target.value);
+            })
+            $("#fc-h").change((e) => {
+                $(".flexContainer").css("height", e.target.value);
+            })
+            $("#fc-justify-content").change((e) => {
+                $(".flexContainer").css("justify-content", e.target.value);
+            })
+            $("#fc-align-items").change((e) => {
+                $(".flexContainer").css("align-items", e.target.value);
+            })
+            $("#fc-align-content").change((e) => {
+                $(".flexContainer").css("align-content", e.target.value);
+            })
+        });
+    </script>
+    <script>
+        
+    </script>
 </head>
 
 <body>
@@ -128,7 +164,68 @@
         <header>
             <h1>Flex Layout</h1>
         </header>
-
+        <section>
+            <div class="controlsHeader">
+                <div class="controlBox">
+                    <p>FlexContainer</p>
+                    <p>
+                        width: <input type="number" id="fc-w" /><br/>
+                        height: <input type="number" id="fc-h" /><br/>
+                    </p>
+                    <p>
+                        flex-direction:
+                        <select id="fc-direction">
+                            <option>row</option>
+                            <option>column</option>
+                            <option>row-reverse</option>
+                            <option>column-reverse</option>
+                        </select>
+                    </p>
+                    <p>
+                        flex-wrap:
+                        <select id="fc-wrap">
+                            <option>nowrap</option>
+                            <option>wrap</option>
+                            <option>wrap-reverse</option>
+                        </select>
+                    </p>
+                    <p>
+                        justify-content:
+                        <select id="fc-justify-content">
+                                <option>flex-start</option>
+                                <option>flex-end</option>
+                                <option>center</option>
+                                <option>space-between</option>
+                                <option>space-around</option>
+                                <option>space-evenly</option>
+                        </select>
+                    </p>
+                    <p>
+                            align-items:
+                        <select id="fc-align-items">
+                            <option>flex-start</option>
+                            <option>flex-end</option>
+                            <option>center</option>
+                            <option>baseline</option>
+                            <option>stretch</option>
+                        </select>
+                            
+                            
+                    </p>
+                    <p>
+                        align-content:
+                            <select id="fc-align-content">
+                                    <option>flex-start</option>
+                                    <option>flex-end</option>
+                                    <option>center</option>
+                                    <option>space-between</option>
+                                    <option>space-around</option>
+                                    <option>space-evenly</option>
+                                </select>
+                    </p>
+                </div>
+            </div>
+        </section>
         <article>
             <div class="flexContainer">
                 <div class="flexItem flexItem1">
