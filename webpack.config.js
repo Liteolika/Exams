@@ -92,6 +92,14 @@ module.exports = {
       template: "./src/2/flex.html",
       filename: "./2/flex.html"
     }),
+    new HtmlWebPackPlugin({
+      template: "./src/2/flexlayout.html",
+      filename: "./2/flexlayout.html"
+    }),
+    new HtmlWebPackPlugin({
+      template: "./src/2/cssselectors.html",
+      filename: "./2/cssselectors.html"
+    }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[id].css"

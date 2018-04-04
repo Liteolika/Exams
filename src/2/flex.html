@@ -65,8 +65,10 @@
             /* Example 3 */
             /* Example 6 */
             /* height: 100px;
+            
             width: 100px; */
             /* By default, flex items are laid out in the source order. 
+            
             However, the order property controls the order in which they appear in the flex container. */
             /* order: <integer>; default is 0 */
             /* This defines the ability for a flex item to grow if necessary. 
@@ -125,6 +127,7 @@
     </style>
     <script src="../../node_modules/jquery/dist/jquery.js"></script>
     <script>
+
         $("document").ready(() => {
             $("#fc-direction").change((e) => {
                 $(".flexContainer").css("flex-direction", e.target.value);
@@ -154,13 +157,97 @@
             $("#fi-h").change((e) => {
                 $(".flexItem").css("height", e.target.value);
             })
-
             $("#fi-fg").change((e) => {
                 $(".flexItem").css("flex-grow", e.target.value);
             })
             $("#fi-fs").change((e) => {
                 $(".flexItem").css("flex-shrink", e.target.value);
             })
+            $("#fi-align-self").change((e) => {
+                $(".flexItem").css("align-self", e.target.value);
+            })
+
+            $("#fi1-w").change((e) => {
+                $(".flexItem1").css("width", e.target.value);
+            })
+            $("#fi1-h").change((e) => {
+                $(".flexItem1").css("height", e.target.value);
+            })
+            $("#fi1-fg").change((e) => {
+                $(".flexItem1").css("flex-grow", e.target.value);
+            })
+            $("#fi1-fs").change((e) => {
+                $(".flexItem1").css("flex-shrink", e.target.value);
+            })
+            $("#fi1-align-self").change((e) => {
+                $(".flexItem1").css("align-self", e.target.value);
+            })
+
+            $("#fi2-w").change((e) => {
+                $(".flexItem2").css("width", e.target.value);
+            })
+            $("#fi2-h").change((e) => {
+                $(".flexItem2").css("height", e.target.value);
+            })
+            $("#fi2-fg").change((e) => {
+                $(".flexItem2").css("flex-grow", e.target.value);
+            })
+            $("#fi2-fs").change((e) => {
+                $(".flexItem2").css("flex-shrink", e.target.value);
+            })
+            $("#fi2-align-self").change((e) => {
+                $(".flexItem2").css("align-self", e.target.value);
+            })
+
+            $("#fi3-w").change((e) => {
+                $(".flexItem3").css("width", e.target.value);
+            })
+            $("#fi3-h").change((e) => {
+                $(".flexItem3").css("height", e.target.value);
+            })
+            $("#fi3-fg").change((e) => {
+                $(".flexItem3").css("flex-grow", e.target.value);
+            })
+            $("#fi3-fs").change((e) => {
+                $(".flexItem3").css("flex-shrink", e.target.value);
+            })
+            $("#fi3-align-self").change((e) => {
+                $(".flexItem3").css("align-self", e.target.value);
+            })
+
+            $("#fi4-w").change((e) => {
+                $(".flexItem4").css("width", e.target.value);
+            })
+            $("#fi4-h").change((e) => {
+                $(".flexItem4").css("height", e.target.value);
+            })
+            $("#fi4-fg").change((e) => {
+                $(".flexItem4").css("flex-grow", e.target.value);
+            })
+            $("#fi4-fs").change((e) => {
+                $(".flexItem4").css("flex-shrink", e.target.value);
+            })
+            $("#fi4-align-self").change((e) => {
+                $(".flexItem4").css("align-self", e.target.value);
+            })
+
+            $("#fi5-w").change((e) => {
+                $(".flexItem5").css("width", e.target.value);
+            })
+            $("#fi5-h").change((e) => {
+                $(".flexItem5").css("height", e.target.value);
+            })
+            $("#fi5-fg").change((e) => {
+                $(".flexItem5").css("flex-grow", e.target.value);
+            })
+            $("#fi5-fs").change((e) => {
+                $(".flexItem5").css("flex-shrink", e.target.value);
+            })
+            $("#fi5-align-self").change((e) => {
+                $(".flexItem5").css("align-self", e.target.value);
+            })
+
+            
 
         });
     </script>
@@ -194,6 +281,7 @@
                     <p>
                         flex-direction:
                         <select id="fc-direction">
+                            <option></option>
                             <option>row</option>
                             <option>column</option>
                             <option>row-reverse</option>
@@ -203,6 +291,7 @@
                     <p>
                         flex-wrap:
                         <select id="fc-wrap">
+                            <option></option>
                             <option>nowrap</option>
                             <option>wrap</option>
                             <option>wrap-reverse</option>
@@ -211,6 +300,7 @@
                     <p>
                         justify-content:
                         <select id="fc-justify-content">
+                            <option></option>
                             <option>flex-start</option>
                             <option>flex-end</option>
                             <option>center</option>
@@ -222,6 +312,7 @@
                     <p>
                         align-items:
                         <select id="fc-align-items">
+                            <option></option>
                             <option>flex-start</option>
                             <option>flex-end</option>
                             <option>center</option>
@@ -234,6 +325,7 @@
                     <p>
                         align-content:
                         <select id="fc-align-content">
+                            <option></option>
                             <option>flex-start</option>
                             <option>flex-end</option>
                             <option>center</option>
@@ -260,7 +352,175 @@
                         <br/>
 
                     </p>
+                    <p>
+                        align-self:
+                        <select id="fi-align-self">
+                            <option></option>
+                            <option>auto</option>
+                            <option>flex-end</option>
+                            <option>flex-start</option>
+                            <option>center</option>
+                            <option>baseline</option>
+                            <option>stretch</option>
+                        </select>
+                    </p>
                 </div>
+
+                <div>
+                    <h3>Flexitem #1</h3>
+                    <p>
+                        width:
+                        <input type="number" id="fi1-w" />
+                        <br/> height:
+                        <input type="number" id="fi1-h" />
+                        <br/>
+                    </p>
+                    <p>
+                        flex-grow:
+                        <input type="number" id="fi1-fg" />
+                        <br/> flex-shrink:
+                        <input type="number" id="fi1-fs" />
+                        <br/>
+
+                    </p>
+                    <p>
+                        align-self:
+                        <select id="fi1-align-self">
+                            <option></option>
+                            <option>auto</option>
+                            <option>flex-end</option>
+                            <option>flex-start</option>
+                            <option>center</option>
+                            <option>baseline</option>
+                            <option>stretch</option>
+                        </select>
+                    </p>
+                </div>
+
+                <div>
+                    <h3>Flexitem #2</h3>
+                    <p>
+                        width:
+                        <input type="number" id="fi2-w" />
+                        <br/> height:
+                        <input type="number" id="fi2-h" />
+                        <br/>
+                    </p>
+                    <p>
+                        flex-grow:
+                        <input type="number" id="fi2-fg" />
+                        <br/> flex-shrink:
+                        <input type="number" id="fi2-fs" />
+                        <br/>
+
+                    </p>
+                    <p>
+                        align-self:
+                        <select id="fi2-align-self">
+                            <option></option>
+                            <option>auto</option>
+                            <option>flex-end</option>
+                            <option>flex-start</option>
+                            <option>center</option>
+                            <option>baseline</option>
+                            <option>stretch</option>
+                        </select>
+                    </p>
+                </div>
+
+                <div>
+                    <h3>Flexitem #3</h3>
+                    <p>
+                        width:
+                        <input type="number" id="fi3-w" />
+                        <br/> height:
+                        <input type="number" id="fi3-h" />
+                        <br/>
+                    </p>
+                    <p>
+                        flex-grow:
+                        <input type="number" id="fi3-fg" />
+                        <br/> flex-shrink:
+                        <input type="number" id="fi3-fs" />
+                        <br/>
+
+                    </p>
+                    <p>
+                        align-self:
+                        <select id="fi3-align-self">
+                            <option></option>
+                            <option>auto</option>
+                            <option>flex-end</option>
+                            <option>flex-start</option>
+                            <option>center</option>
+                            <option>baseline</option>
+                            <option>stretch</option>
+                        </select>
+                    </p>
+                </div>
+
+                <div>
+                    <h3>Flexitem #4</h3>
+                    <p>
+                        width:
+                        <input type="number" id="fi4-w" />
+                        <br/> height:
+                        <input type="number" id="fi4-h" />
+                        <br/>
+                    </p>
+                    <p>
+                        flex-grow:
+                        <input type="number" id="fi4-fg" />
+                        <br/> flex-shrink:
+                        <input type="number" id="fi4-fs" />
+                        <br/>
+
+                    </p>
+                    <p>
+                        align-self:
+                        <select id="fi4-align-self">
+                            <option></option>
+                            <option>auto</option>
+                            <option>flex-end</option>
+                            <option>flex-start</option>
+                            <option>center</option>
+                            <option>baseline</option>
+                            <option>stretch</option>
+                        </select>
+                    </p>
+                </div>
+
+                <div>
+                    <h3>Flexitem #5</h3>
+                    <p>
+                        width:
+                        <input type="number" id="fi5-w" />
+                        <br/> height:
+                        <input type="number" id="fi5-h" />
+                        <br/>
+                    </p>
+                    <p>
+                        flex-grow:
+                        <input type="number" id="fi5-fg" />
+                        <br/> flex-shrink:
+                        <input type="number" id="fi5-fs" />
+                        <br/>
+
+                    </p>
+                    <p>
+                        align-self:
+                        <select id="fi5-align-self">
+                            <option></option>
+                            <option>auto</option>
+                            <option>flex-end</option>
+                            <option>flex-start</option>
+                            <option>center</option>
+                            <option>baseline</option>
+                            <option>stretch</option>
+                        </select>
+                    </p>
+                </div>
+
             </div>
         </section>
         <article>

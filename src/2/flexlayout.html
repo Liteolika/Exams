@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <style>
+        body {
+            height: 100vh;
+        }
+        .flexContainer {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            height: 100%;
+        }
+
+        .flexHeader {
+            background-color: bisque;
+        }
+
+        .flexMenu {
+            background-color: cadetblue;
+            flex-grow: 2;
+        }
+
+        .flexMain {
+            color: #000;
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+        }
+
+        .flexContent {
+            background-color: cornsilk;
+            flex-grow: 8;
+        }
+
+        .flexRight {
+            background-color: darkgrey;
+            flex-grow: 2;
+        }
+
+        .flexFooter {
+            background-color: darkslategrey;
+            color: #fff;
+        }
+    </style>
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $("document").ready(() => {
+        });
+    </script>
+    <script>
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Back to main</a>
+        </nav>
+    </header>
+
+    <main>
+        <header>
+            <h1>Flex Layout</h1>
+        </header>
+
+
+        <div class="flexContainer">
+            <header class="flexHeader">Header</header>
+            
+            <div class="flexMain">
+                    <div class="flexMenu">Menu</div>
+                    <div class="flexContent">Content</div>
+                    <div class="flexRight">Right</div>
+            </div>
+            <footer class="flexFooter">Footer</footer>
+
+        </div>
+
+
+
+
+    </main>
+
+
+</body>
+
+</html>
